@@ -1,0 +1,29 @@
+[
+    {
+        "_id": 1001,
+        "name": "Dental Surgery",
+        "price": 10000,
+        "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth .",
+        "img": "https://i.ibb.co/P5hFLrN/Untitled-design-19.png",
+        "minimum": 50,
+        "available": 5000
+    },
+    {
+        "_id": 1002,
+        "name": "Dental Surgery",
+        "price": 10000,
+        "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth",
+        "img": "https://i.ibb.co/P5hFLrN/Untitled-design-19.png",
+        "minimum": 50,
+        "available": 5000
+    },
+    {
+        "_id": 1003,
+        "name": "Dental Surgery",
+        "price": 10000,
+        "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth",
+        "img": "https://i.ibb.co/P5hFLrN/Untitled-design-19.png",
+        "minimum": 50,
+        "available": 5000
+    }
+]

@@ -7,6 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { publicRoutes } from './routers/publicRoutes';
 import { useEffect } from 'react';
+import Purchase from './pages/Purchase';
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,9 @@ function App() {
               <Route key={index} path={path} element={<Component />} />
             ))
           }
+          <Route path='/tool/:id' element={
+            <Purchase></Purchase>
+          }></Route>
         </Routes>
       </Navbar>
     </div>
