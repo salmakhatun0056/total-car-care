@@ -7,7 +7,7 @@ const Navbar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
                 {/* <!-- Navbar --> */}
-                <div class="w-full navbar bg-base-300">
+                <div class="w-full navbar bg-base-300 lg:px-16">
                     <div class="flex-1 px-2 mx-2">Navbar Title</div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -15,10 +15,11 @@ const Navbar = ({ children }) => {
                         </label>
                     </div>
                     <div class="flex-none hidden lg:block">
-                        <ul class="menu menu-horizontal">
+                        <ul class="menu menu-horizontal gap-x-2">
                             {/* <!-- Navbar menu content here --> */}
-                            <li><NavLink to='/'>Home</NavLink></li>
-                            <li><a>Navbar Item 2</a></li>
+                            <li ><NavLink className='rounded-lg' to='/'>Home</NavLink></li>
+                            <li ><NavLink className='rounded-lg' to='/login'>Login</NavLink></li>
+
                         </ul>
                     </div>
                 </div>
