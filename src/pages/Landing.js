@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import fetcher from '../api';
 import banner1 from '../assests/images/banner-car1.png'
 import banner2 from '../assests/images/banner-car2.png'
 import banner3 from '../assests/images/banner-car3.jpg'
@@ -14,7 +14,7 @@ const Landing = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await axios.get('http://localhost:5000/get-tool');
+            const res = await fetcher.get('/get-tool');
             setTools(res.data);
         })();
 

@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1001,
         "name": "Tier",
         "price": 10000,
         "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth .",
@@ -9,7 +8,6 @@
         "available": 5000
     },
     {
-        "_id": 1002,
         "name": "Tier",
         "price": 10000,
         "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth",
@@ -18,7 +16,6 @@
         "available": 5000
     },
     {
-        "_id": 1003,
         "name": "Tier",
         "price": 10000,
         "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth",

@@ -16,7 +16,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending, Rerror] = useSendPasswordResetEmail(
+    const [sendPasswordResetEmail, sending, rError] = useSendPasswordResetEmail(
         auth
     );
     const navigate = useNavigate()
@@ -24,8 +24,8 @@ const Login = () => {
     if (gUser || user) {
         navigate(location.state?.from?.pathname || "/")
     }
-    if (error || gError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    if (error || gError || rError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || rError?.message}</small></p>
     }
     if (loading || gLoading || sending) {
         return <Loading></Loading>
