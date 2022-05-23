@@ -1,26 +1,14 @@
 [
     {
-        "name": "Tier",
-        "price": 10000,
-        "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth .",
-        "img": "https://i.ibb.co/JvT4mkQ/146157215-wheel-vector-icon-realistic-vector-isolated-on-white-background-wheel.webp",
-        "minimum": 50,
-        "available": 5000
+        "ratings": 4,
+        "description": "Your services so good and product quality best. I really impress"
     },
     {
-        "name": "Tier",
-        "price": 10000,
-        "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth",
-        "img": "https://i.ibb.co/JvT4mkQ/146157215-wheel-vector-icon-realistic-vector-isolated-on-white-background-wheel.webp",
-        "minimum": 50,
-        "available": 5000
+        "ratings": 4,
+        "description": "Your services so good and product quality best. I really impress"
     },
     {
-        "name": "Tier",
-        "price": 10000,
-        "description": "Oral surgery is a broad term for any operation performed on the structure of your teeth",
-        "img": "https://i.ibb.co/JvT4mkQ/146157215-wheel-vector-icon-realistic-vector-isolated-on-white-background-wheel.webp",
-        "minimum": 50,
-        "available": 5000
+        "ratings": 4,
+        "description": "Your services so good and product quality best. I really impress"
     }
 ]
