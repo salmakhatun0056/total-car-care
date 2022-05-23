@@ -32,7 +32,7 @@ const Register = () => {
         console.log(data)
     };
     return (
-        <div class="bg--base-100 w-full h-screen justify-center items-center flex mt-5">
+        <div class="bg--base-100 w-full h-screen justify-center items-center flex mt-10">
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div class="card-body">
                     <h2 className='text-3xl text-center font-bold text-primary'>Register</h2>
