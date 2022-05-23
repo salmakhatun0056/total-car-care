@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
 
 
@@ -93,7 +93,7 @@ const Login = () => {
                             </label>
                             <small>Forget Password? <button className='px-2 text-sm btn-link text-primary' onClick={resetPassword}>Reset Password</button> </small>
 
-                            <small className='mt-2 '> New to car parts shop?  <a href="/register" class=" px-2 text-primary">Please Register</a></small>
+                            <small className='mt-2 '> New to car parts shop? <Link to='/register' className='text-info pe-auto text-decoration-none'>Please Register </Link></small>
 
                         </div>
                         {signInError}

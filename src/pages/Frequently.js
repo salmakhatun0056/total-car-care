@@ -4,7 +4,8 @@ import frequentlyImage from '../assests/images/frequently2.jpg'
 const Frequently = () => {
     return (
         <div className='mt-12'>
-            <h1 className='text-center text-2xl text-primary'>this is Frequently</h1>
+            <h1 className='text-center text-2xl text-primary'>Need Your Help?</h1>
+            <h1 className='text-center text-4xl text-primary'>Request a quote.</h1>
             <div style={{ backgroundImage: `url(${frequentlyImage})`, minHeight: '80vh', display: 'flex' }} class="hero w-3/4 mx-auto mb-5 mt-5 bg-base-200">
                 <div class="hero-content flex-col lg:flex-row-reverse justify-center items-center">
                     <div class=" lg:text-left text-white">
@@ -17,18 +18,25 @@ const Frequently = () => {
                         <div class="card-body">
                             <div class="form-control">
                                 <label class="label">
+                                    <span class="label-text">Name</span>
+                                </label>
+                                <input type="text" placeholder="Your Name" class="input input-bordered" />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
                                     <span class="label-text">Email</span>
                                 </label>
                                 <input type="text" placeholder="email" class="input input-bordered" />
                             </div>
                             <div class="form-control">
                                 <label class="label">
-                                    <span class="label-text">Password</span>
+                                    <span class="label-text">Your Message</span>
                                 </label>
-                                <input type="text" placeholder="password" class="input input-bordered" />
+                                <input type="text" placeholder="Your Message" class="input input-bordered" />
                             </div>
+
                             <div class="form-control mt-6">
-                                <button class="btn btn-primary">Login</button>
+                                <button class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </div>

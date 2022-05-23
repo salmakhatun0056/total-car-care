@@ -16,7 +16,7 @@ const Navbar = ({ children }) => {
             <div class="drawer-content flex flex-col">
                 {/* <!-- Navbar --> */}
                 <div class="w-full navbar  bg-base-200 lg:px-16">
-                    <Link to="/" class="flex-1 px-2 mx-2">Car Parts Shop</Link>
+                    <Link to="/" class="flex-1 px-2 mx-2 text-xl font-bold text-primary">Total Car Care</Link>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -29,6 +29,9 @@ const Navbar = ({ children }) => {
                             {/* <li ><NavLink className='rounded-lg' to='/Purchase'>Purchase</NavLink></li> */}
                             <li ><NavLink className='rounded-lg' to='blog'>Blog</NavLink></li>
                             <li>{user ? <button onClick={logout} className="btn btn-ghost rounded-lg">Sign Out</button> : <NavLink className='rounded-lg' to="/login">Login</NavLink>}</li>
+
+                            {/* <li>{user ? <button onClick={logout} className="btn btn-ghost rounded-lg">Sign Out</button> : <NavLink className='rounded-lg' to="/register">Register</NavLink>}</li> */}
+
 
                         </ul>
                     </div>
