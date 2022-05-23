@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import bannerBackground from '../assests/images/banner-car.png'
+import banner1 from '../assests/images/banner-car1.png'
+import banner2 from '../assests/images/banner-car2.png'
+import banner3 from '../assests/images/banner-car3.jpg'
+
 import Tool from './Tool';
 
 
@@ -16,7 +19,7 @@ const Landing = () => {
         <>
             <div class="carousel w-full">
                 <div id="slide1" class="carousel-item relative w-full">
-                    <img className='w-full shrink-0' src={bannerBackground} style={{ minHeight: '70vh', display: 'flex', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', backgroundSize: 'cover' }} alt='' />
+                    <img className='w-full shrink-0' src={banner1} style={{ minHeight: '70vh', display: 'flex', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', backgroundSize: 'cover' }} alt='' />
                     <div className=' carousel-caption w-full lg:w-1/2  h-full flex justify-center items-center absolute  text-white '>
                         <div class="">
                             <div class="hero-content text-center text-neutral-content px-20 flex ">
@@ -35,7 +38,7 @@ const Landing = () => {
                     </div>
                 </div>
                 <div id="slide2" class="carousel-item relative w-full">
-                    <img className='w-full shrink-0' src={bannerBackground} style={{ minHeight: '70vh', display: 'flex', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', backgroundSize: 'cover' }} alt='' />
+                    <img className='w-full shrink-0' src={banner2} style={{ minHeight: '70vh', display: 'flex', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', backgroundSize: 'cover' }} alt='' />
                     <div className=' carousel-caption w-full lg:w-1/2  h-full flex justify-center items-center absolute  text-white '>
                         <div class="">
                             <div class="hero-content text-center text-neutral-content px-20 flex ">
@@ -54,7 +57,7 @@ const Landing = () => {
                     </div>
                 </div>
                 <div id="slide3" class="carousel-item relative w-full">
-                    <img className='w-full shrink-0' src={bannerBackground} style={{ minHeight: '70vh', display: 'flex', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', backgroundSize: 'cover' }} alt='' />
+                    <img className='w-full shrink-0' src={banner3} style={{ minHeight: '70vh', display: 'flex', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center', backgroundSize: 'cover' }} alt='' />
                     <div className=' carousel-caption w-full lg:w-1/2  h-full flex justify-center items-center absolute  text-white '>
                         <div class="">
                             <div class="hero-content text-center text-neutral-content px-20 flex ">

@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import { publicRoutes } from './routers/publicRoutes';
 import { useEffect } from 'react';
 import Purchase from './pages/Purchase';
+import NotFound from './pages/NotFound';
 
 function App() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/tool/:id' element={
             <Purchase></Purchase>
           }></Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </Navbar>
     </div>

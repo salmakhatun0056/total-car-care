@@ -1,28 +1,46 @@
 import React from 'react';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import auth from '../firebase.init';
 
-
-const Login = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate()
-    if (gUser) {
-        navigate('/')
-    }
 
     const onSubmit = data => {
+        createUserWithEmailAndPassword(data.email, data.password)
         reset()
         console.log(data)
     };
     return (
-        <div class="bg--base-100 w-full h-screen justify-center items-center flex">
+        <div class="bg--base-100 w-full h-screen justify-center items-center flex mt-5">
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div class="card-body">
-                    <h2 className='text-3xl text-center font-bold text-primary'>Login</h2>
+                    <h2 className='text-3xl text-center font-bold text-primary'>Register</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Name</span>
+                            </label>
+                            <input {...register("name", {
+                                required: {
+                                    value: true,
+                                    message: 'Name is required'
+                                }
+                            })} type="text" placeholder="Enter Your Name" class="input input-bordered"
+                            />
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500 ">{errors.name.message}</span>}
+                            </label>
+                        </div>
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Email</span>
@@ -62,22 +80,19 @@ const Login = () => {
                             </label>
 
                             <label class="label">
-                                <small> New to car parts shop?  <a href="/register" class="label-text-alt link link-hover text-primary">Please Register</a></small>
+                                <small> Already have an account ?  <a href="/login" class="label-text-alt link link-hover text-primary">Please Login</a></small>
                             </label>
                         </div>
                         <div class="form-control mt-6">
-                            <button class="btn btn-primary">Login</button>
+                            <button class="btn btn-primary">Register</button>
                         </div>
                         <div class="divider">OR</div>
+                        <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-primary w-full">Continue with google</button>
                     </form>
-                    <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-primary w-full">Continue with google</button>
                 </div>
             </div>
         </div>
-
-
-
     );
 };
 
-export default Login;
+export default Register;
