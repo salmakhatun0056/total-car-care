@@ -1,22 +1,52 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
 
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, Rerror] = useSendPasswordResetEmail(
+        auth
+    );
     const navigate = useNavigate()
-    if (gUser) {
+    let signInError;
+    if (gUser || user) {
         navigate('/')
+    }
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
+    if (loading || gLoading || sending) {
+        return <Loading></Loading>
     }
 
     const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password)
         reset()
         console.log(data)
     };
+
+    const resetPassword = async (data) => {
+        console.log(data)
+        await sendPasswordResetEmail(data.email);
+        if (data.email) {
+            await sendPasswordResetEmail(data.email);
+            alert('Sent email');
+        }
+        else {
+            alert('please enter your email address');
+        }
+    }
     return (
         <div class="bg--base-100 w-full h-screen justify-center items-center flex">
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -27,7 +57,7 @@ const Login = () => {
                             <label class="label">
                                 <span class="label-text">Email</span>
                             </label>
-                            <input   {...register("email", {
+                            <input    {...register("email", {
                                 required: {
                                     value: true,
                                     message: 'Email is required'
@@ -60,11 +90,12 @@ const Login = () => {
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLenth' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                             </label>
+                            <small>Forget Password? <button className='px-2 text-sm btn-link text-primary' onClick={resetPassword}>Reset Password</button> </small>
 
-                            <label class="label">
-                                <small> New to car parts shop?  <a href="/register" class="label-text-alt link link-hover text-primary">Please Register</a></small>
-                            </label>
+                            <small className='mt-2 '> New to car parts shop?  <a href="/register" class=" px-2 text-primary">Please Register</a></small>
+
                         </div>
+                        {signInError}
                         <div class="form-control mt-6">
                             <button class="btn btn-primary">Login</button>
                         </div>

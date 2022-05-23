@@ -1,22 +1,33 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
 import auth from '../firebase.init';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate()
 
-    const onSubmit = data => {
-        createUserWithEmailAndPassword(data.email, data.password)
+
+    let signInError
+
+    if (gUser || user) {
+        navigate('/')
+    }
+    if (loading || gLoading) {
+        return <Loading />
+    }
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
+
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name });
         reset()
         console.log(data)
     };
@@ -78,17 +89,16 @@ const Register = () => {
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLenth' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                             </label>
+                            <small> Already have an account ?  <a href="/login" class="label-text-alt link link-hover text-primary">Please Login</a></small>
 
-                            <label class="label">
-                                <small> Already have an account ?  <a href="/login" class="label-text-alt link link-hover text-primary">Please Login</a></small>
-                            </label>
                         </div>
+                        {signInError}
                         <div class="form-control mt-6">
                             <button class="btn btn-primary">Register</button>
                         </div>
                         <div class="divider">OR</div>
-                        <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-primary w-full">Continue with google</button>
                     </form>
+                    <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-primary w-full">Continue with google</button>
                 </div>
             </div>
         </div>
