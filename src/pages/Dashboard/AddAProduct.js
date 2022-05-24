@@ -77,7 +77,7 @@ const AddAProduct = () => {
 
                         <div class="form-control my-2">
 
-                            <input onChange={handleUploadImage} type="file" placeholder="img" class="input input-bordered" />
+                            <input onChange={handleUploadImage} type="file" placeholder="img" class="input input-bordered" required />
                         </div>
 
                         <div class="form-control mt-6">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import notFound from '../assests/images/notFound.png'
 
 const NotFound = () => {
@@ -11,7 +12,7 @@ const NotFound = () => {
                 <div className='px-20'>
                     <h1 class="text-5xl font-bold text-primary">Page <br />Not Found</h1>
                     <p class="py-6">The page you requested was not found,and we have a fine guess why . If you type the URL directly please make sure the spelling is correct. If you clicked on a link to get here, the link is outdated. What can you do? Have no fear, help is near.</p>
-                    <button className='btn btn-primary'><a className='text-white ' href="/">Go Home</a></button>
+                    <button className='btn btn-primary'><Link className='text-white ' to="/">Go Home</Link></button>
                 </div>
             </div>
         </div>

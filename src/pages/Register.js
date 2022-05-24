@@ -2,6 +2,7 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import fetcher from '../api';
 import Loading from '../components/Loading';
 import auth from '../firebase.init';
 
@@ -29,7 +30,17 @@ const Register = () => {
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name });
         reset()
-        console.log(data)
+
+        const newUser = { name: data.name, email: data.email }
+        fetch('http://localhost:5000/users', {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+        })
+            .then(res => res.json())
+            .then(result => console.log(result))
     };
     return (
         <div class="bg--base-100 w-full h-screen justify-center items-center flex mt-10">
