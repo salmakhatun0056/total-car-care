@@ -16,6 +16,10 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MyOrders from './pages/Dashboard/MyOrders';
 import AddReview from './pages/Dashboard/AddReview';
 import MyProfile from './pages/Dashboard/MyProfile';
+import ManageAllOrders from './pages/Dashboard/ManageAllOrders';
+import AddAProduct from './pages/Dashboard/AddAProduct';
+import MakeAdmin from './pages/Dashboard/MakeAdmin';
+import ManageProducts from './pages/Dashboard/ManageProducts';
 
 
 
@@ -35,15 +39,23 @@ function App() {
           <Route path='/register' element={<Register></Register>}></Route>
           {/* <Route path='/reviews' element={<Reviews />}></Route> */}
 
-          <Route path='/dashboard' element={<Dashboard />}>
-            <Route path='my-orders' element={<MyOrders />}></Route>
-            <Route path='add-review' element={<AddReview />}></Route>
-            <Route path='my-profile' element={<MyProfile />}></Route>
+
+          <Route path='/tool/:id' element={<RequireAuth><Purchase /></RequireAuth>}></Route>
+
+          <Route path='/dashboard' element={<RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>}>
+
+            <Route path='/dashboard/' element={<MyOrders />}></Route>
+            <Route path='/dashboard/add-review' element={<AddReview />}></Route>
+            <Route path='/dashboard/my-profile' element={<MyProfile />}></Route>
+            <Route path='/dashboard/manage-all-orders' element={<ManageAllOrders />}></Route>
+            <Route path='/dashboard/add-a-product' element={<AddAProduct />}></Route>
+            <Route path='/dashboard/make-admin' element={<MakeAdmin />}></Route>
+            <Route path='/dashboard/manage-products' element={<ManageProducts />}></Route>
+
           </Route>
 
-          <Route element={<RequireAuth />}>
-            <Route path='/tool/:id' element={<Purchase />}></Route>
-          </Route>
 
 
           <Route path='*' element={<NotFound></NotFound>}></Route>

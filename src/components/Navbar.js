@@ -32,13 +32,13 @@ const Navbar = ({ children }) => {
                         <ul class="menu menu-horizontal gap-x-2">
                             {/* <!-- Navbar menu content here --> */}
                             <li ><NavLink className='rounded-lg' to='/'>Home</NavLink></li>
-                            {/* <li ><NavLink className='rounded-lg' to='/reviews'>Reviews</NavLink></li> */}
 
                             <li ><NavLink className='rounded-lg' to='/blog'>Blog</NavLink></li>
-                            {user && <li><NavLink className='rounded-lg' to='/dashboard/my-profile'>Dashboard</NavLink></li>}
+
+                            {user && <li><NavLink className='rounded-lg' to='/dashboard'>Dashboard</NavLink></li>}
+
                             <li>{user ? <button onClick={logout} className="btn btn-ghost rounded-lg">Sign Out</button> : <NavLink className='rounded-lg' to="/login">Login</NavLink>}</li>
 
-                            {/* <li>{user ? <button onClick={logout} className="btn btn-ghost rounded-lg">Sign Out</button> : <NavLink className='rounded-lg' to="/register">Register</NavLink>}</li> */}
 
 
                         </ul>
