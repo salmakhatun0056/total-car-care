@@ -42,6 +42,12 @@ const Register = () => {
             .then(res => res.json())
             .then(result => console.log(result))
     };
+
+    // const userSubmit = data => {
+
+
+
+    // }
     return (
         <div class="bg--base-100 w-full h-screen justify-center items-center flex mt-10">
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
