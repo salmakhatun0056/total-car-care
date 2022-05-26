@@ -27,7 +27,7 @@ const AddReview = () => {
                                 <span class="label-text">Tools Rating</span>
                             </label>
                             {/* <input  type="number"   /> */}
-                            <input {...register("ratings")} placeholder="Tools ratings" class="input input-bordered" type="number" id="quantity" name="quantity" min="1" max="5" />
+                            <input {...register("ratings")} placeholder="Tools ratings" class="input input-bordered" type="number" id="quantity" name="quantity" min="1" max="5" required />
                         </div>
 
                         <div class="form-control">
@@ -39,7 +39,7 @@ const AddReview = () => {
                                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                                 id="exampleFormControlTextarea1"
                                 rows="3"
-                                placeholder="Write Your short description"
+                                placeholder="Write Your short description" required
                             ></textarea>
                         </div>
 

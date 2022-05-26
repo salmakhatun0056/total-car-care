@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import fetcher from '../api';
 import Loading from '../components/Loading';
 import auth from '../firebase.init';
+import useToken from '../hooks/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -13,10 +14,12 @@ const Register = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate()
 
+    const [token] = useToken(gUser || user)
+
 
     let signInError
 
-    if (gUser || user) {
+    if (token) {
         navigate('/')
     }
     if (loading || gLoading) {

@@ -9,6 +9,7 @@ const Navbar = ({ children }) => {
     const { pathname } = useLocation()
 
     const logout = () => {
+        localStorage.removeItem('accessToken');
         signOut(auth);
     };
     return (

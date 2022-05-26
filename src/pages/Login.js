@@ -1,29 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
+import useToken from '../hooks/useToken';
 
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     let location = useLocation();
+    let from = location.state?.from?.pathname || '/'
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(gUser || user)
     const [sendPasswordResetEmail, sending, rError] = useSendPasswordResetEmail(
         auth
     );
     const navigate = useNavigate()
     let signInError;
-    if (gUser || user) {
-        navigate(location.state?.from?.pathname || "/")
-    }
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true })
+        }
+    }, [from, navigate, token])
     if (error || gError || rError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || rError?.message}</small></p>
     }

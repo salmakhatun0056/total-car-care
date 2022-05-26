@@ -16,15 +16,15 @@ const DashboardSidebar = ({ children }) => {
                 </div>
                 <div class="drawer-side">
                     <label for="my-drawer-2" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content ">
                         {/* <!-- Sidebar content here --> */}
-                        <li><Link to="/dashboard">My Orders</Link></li>
-                        <li><Link to="/dashboard/add-review">Add a review</Link></li>
-                        <li><Link to="/dashboard/my-profile">My Profile</Link></li>
-                        <li><Link to="/dashboard/manage-all-orders">Manage-All-Orders</Link></li>
-                        <li><Link to="/dashboard/add-a-product">Add A Product</Link></li>
-                        <li><Link to="/dashboard/make-admin">Make Admin</Link></li>
-                        <li><Link to="/dashboard/manage-products">Manage Products</Link></li>
+                        <li><Link className='mb-3' to="/dashboard">My Orders</Link></li>
+                        <li><Link className='mb-3' to="/dashboard/add-review">Add a review</Link></li>
+                        <li><Link className='mb-3' to="/dashboard/my-profile">My Profile</Link></li>
+                        <li><Link className='mb-3' to="/dashboard/manage-all-orders">Manage-All-Orders</Link></li>
+                        <li><Link className='mb-3' to="/dashboard/add-a-product">Add A Product</Link></li>
+                        <li><Link className='mb-3' to="/dashboard/make-admin">Make Admin</Link></li>
+                        <li><Link className='mb-3' to="/dashboard/manage-products">Manage Products</Link></li>
 
 
                     </ul>
