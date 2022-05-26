@@ -1,5 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 import { async } from '@firebase/util';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
@@ -8,6 +9,7 @@ import Loading from '../components/Loading';
 
 const Purchase = ({ user }) => {
     const { id } = useParams()
+    const [success, setSuccess] = useState(false)
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const tool = useQuery('tool', () => fetch(`http://localhost:5000/get-tool/${id}`)
@@ -40,8 +42,16 @@ const Purchase = ({ user }) => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
-                toast('Order Success')
+                setSuccess(result)
+                if (!success) {
+                    reset()
+                    return toast('Order Success')
+                }
+
+                else {
+                    reset()
+                    toast("your order has not completed")
+                }
             })
     };
 
