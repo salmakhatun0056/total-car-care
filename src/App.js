@@ -24,6 +24,8 @@ import ManageProducts from './pages/Dashboard/ManageProducts';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './authentication/RequireAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
 
 
 
@@ -33,6 +35,7 @@ function App() {
   useEffect(() => {
     AOS.init();
   }, [])
+  const [user] = useAuthState(auth)
   return (
     <div >
       <Navbar>
@@ -44,7 +47,7 @@ function App() {
           {/* <Route path='/reviews' element={<Reviews />}></Route> */}
 
 
-          <Route path='/tool/:id' element={<RequireAuth><Purchase /></RequireAuth>}></Route>
+          <Route path='/tool/:id' element={<RequireAuth><Purchase user={user} /></RequireAuth>}></Route>
 
           <Route path='/dashboard' element={<RequireAuth>
             <Dashboard></Dashboard>

@@ -14,7 +14,7 @@ const Frequently = () => {
                         <p class="py-2"><span className='text-warning'>Question 2:</span> <br /> Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                         <p class="py-2"><span className='text-warning'>Question 3:</span> <br /> Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div class="card flex-shrink-0 w-full  max-w-sm lg:shadow-2xl bg-base-100">
                         <div class="card-body">
                             <div class="form-control">
                                 <label class="label">
