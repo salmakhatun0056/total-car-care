@@ -10,7 +10,7 @@ import RequireAuth from './authentication/RequireAuth';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
 import Login from './pages/Login';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MyOrders from './pages/Dashboard/MyOrders';
@@ -84,7 +84,7 @@ function App() {
 
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Navbar>
       <ToastContainer />
     </div>
