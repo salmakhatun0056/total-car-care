@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import fetcher from '../../api';
 
 const AddAProduct = () => {
@@ -20,6 +21,7 @@ const AddAProduct = () => {
         console.log(res);
         reset()
         setImageUrl("")
+        toast('Add Product Successfully')
 
     }
 
@@ -44,44 +46,44 @@ const AddAProduct = () => {
     }
     return (
         <div style={{ height: '100vh' }} className='bg-accent w-full  justify-center items-center flex'>
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div class="card-body">
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card-body">
                     <h1 className='text-primary text-2xl font-bold text-center'> ADD A Product</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div class="form-control my-2">
+                        <div className="form-control my-2">
 
-                            <input {...register("name")} placeholder="Tools Name" class="input input-bordered" type="text" required />
+                            <input {...register("name")} placeholder="Tools Name" className="input input-bordered" type="text" required />
                         </div>
 
-                        <div class="form-control my-2">
+                        <div className="form-control my-2">
                             <textarea {...register("description")}
-                                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
+                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                                 id="exampleFormControlTextarea1"
                                 rows="2"
                                 placeholder="Write Your short description"
                             ></textarea>
                         </div>
 
-                        <div class="form-control my-2">
-                            <input {...register("price")} placeholder="Tool Price" class="input input-bordered" type="number" id="price" name="price" min='1' required />
+                        <div className="form-control my-2">
+                            <input {...register("price")} placeholder="Tool Price" className="input input-bordered" type="number" id="price" name="price" min='1' required />
                         </div>
 
-                        <div class="form-control my-2">
-                            <input {...register("minimum")} placeholder="Minimum Qty" class="input input-bordered" type="number" id="minimum" name="minimum" min='1' required />
+                        <div className="form-control my-2">
+                            <input {...register("minimum")} placeholder="Minimum Qty" className="input input-bordered" type="number" id="minimum" name="minimum" min='1' required />
                         </div>
 
-                        <div class="form-control my-2">
-                            <input {...register("available")} placeholder="Available Qty" class="input input-bordered" type="number" id="available" name="available" min='1' required />
+                        <div className="form-control my-2">
+                            <input {...register("available")} placeholder="Available Qty" className="input input-bordered" type="number" id="available" name="available" min='1' required />
                         </div>
 
-                        <div class="form-control my-2">
+                        <div className="form-control my-2">
 
-                            <input onChange={handleUploadImage} type="file" placeholder="img" class="input input-bordered" required />
+                            <input onChange={handleUploadImage} type="file" placeholder="img" className="input input-bordered" required />
                         </div>
 
-                        <div class="form-control mt-6">
-                            <button type='submit' class={!imageUrl ? "btn btn-disabled" : "btn btn-primary"}
+                        <div className="form-control mt-6">
+                            <button type='submit' className={!imageUrl ? "btn btn-disabled" : "btn btn-primary"}
                                 disabled={!imageUrl ? true : false}
                             >ADD A PRODUCT</button>
 

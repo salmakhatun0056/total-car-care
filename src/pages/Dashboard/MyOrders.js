@@ -29,8 +29,8 @@ const MyOrders = ({ user }) => {
             })
     }
     return (
-        <div class="overflow-x-auto mt-6">
-            <table class="table w-full">
+        <div className="overflow-x-auto mt-6">
+            <table className="table w-full">
                 {/* <!-- head --> */}
                 <thead>
                     <tr>

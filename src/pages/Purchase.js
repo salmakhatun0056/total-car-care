@@ -53,17 +53,21 @@ const Purchase = ({ user }) => {
                     toast("your order has not completed")
                 }
             })
+
+
     };
+
+
 
     return (
 
-        <div class="hero min-h-screen bg-base-100">
-            <div class="hero-content flex-col ">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-3xl text-primary font-bold">Purchase the product</h1>
+        <div className="hero min-h-screen bg-base-100">
+            <div className="hero-content flex-col ">
+                <div className="text-center lg:text-left">
+                    <h1 className="text-3xl text-primary font-bold">Purchase the product</h1>
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleSubmit(onSubmit)} class="card-body">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="from-control">
                             <img src={img} alt="" />
                         </div>
@@ -76,42 +80,42 @@ const Purchase = ({ user }) => {
                             <h2>Available Qty:  {available}pcs</h2>
                         </div>
 
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Order Quantity</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Order Quantity</span>
                             </label>
-                            <input {...register("orderQty")} type="number" min={minimum} max={available} defaultValue={minimum} class="input input-bordered" />
+                            <input {...register("orderQty")} type="number" min={minimum} max={available} defaultValue={minimum} className="input input-bordered" />
                         </div>
                         <div className=" text-center mt-2 text-xl">Your Information</div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Your Name</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Your Name</span>
                             </label>
-                            <input {...register("name")} type="text" value={user.displayName} class="input input-bordered" />
+                            <input {...register("name")} type="text" value={user.displayName} className="input input-bordered" />
                         </div>
 
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Your Email</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Your Email</span>
                             </label>
-                            <input {...register("email")} type="text" value={user.email} class="input input-bordered" />
+                            <input {...register("email")} type="text" value={user.email} className="input input-bordered" />
                         </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Your Address</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Your Address</span>
                             </label>
-                            <input {...register("address")} type="text" class="input input-bordered" />
-                        </div>
-
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Phone Number</span>
-                            </label>
-                            <input {...register("number")} type="text" class="input input-bordered" />
+                            <input {...register("address")} type="text" className="input input-bordered" />
                         </div>
 
-                        <div class="form-control mt-6">
-                            <button class="btn btn-primary">Please Order Now</button>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Phone Number</span>
+                            </label>
+                            <input {...register("number")} type="text" className="input input-bordered" />
+                        </div>
+
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Please Order Now</button>
                         </div>
                     </form>
                 </div>

@@ -26,6 +26,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './authentication/RequireAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
+import MyPortfolio from './pages/MyPortfolio';
 
 
 
@@ -42,6 +43,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/blog' element={<Blog></Blog>}></Route>
+          <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
           {/* <Route path='/reviews' element={<Reviews />}></Route> */}

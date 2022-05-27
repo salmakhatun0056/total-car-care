@@ -9,17 +9,17 @@ const Tool = ({ tool }) => {
     }
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl mt-8">
-                <figure class="px-10 pt-10">
-                    <img style={{ width: '150px' }} src={img} alt="car-tools" class="rounded-xl" />
+            <div className="card w-96 bg-base-100 shadow-xl mt-8">
+                <figure className="px-10 pt-10">
+                    <img style={{ width: '150px', height: '200px' }} src={img} alt="car-tools" className="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center ">
-                    <h2 class="card-title">Name: {name}</h2>
+                <div className="card-body items-center text-center ">
+                    <h2 className="card-title">Name: {name}</h2>
                     <p className='text-error'>Price: ${price} </p>
                     <p>Tools Description: {description}</p>
                     <p> {minimum} piece (Minimum order)</p>
                     <p>{available} piece (Our available quantity)</p>
-                    <div class="card-actions">
+                    <div className="card-actions">
                         <button onClick={() => handelPurchaseButton(_id)} className='btn btn-primary text-white fw-bold'>PURCHASE NOW: {name}</button>
                     </div>
                 </div>

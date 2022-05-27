@@ -54,14 +54,14 @@ const Login = () => {
         }
     }
     return (
-        <div class="bg--base-100 w-full h-screen justify-center items-center flex">
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div class="card-body">
+        <div className="bg--base-100 w-full h-screen justify-center items-center flex">
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card-body">
                     <h2 className='text-3xl text-center font-bold text-primary'>Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
                             <input    {...register("email", {
                                 required: {
@@ -72,15 +72,15 @@ const Login = () => {
                                     value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                                     message: 'Provide a valid email'
                                 }
-                            })} type="text" placeholder="Enter Your Email" class="input input-bordered" />
+                            })} type="text" placeholder="Enter Your Email" className="input input-bordered" />
                             <label className="label">
                                 {errors.email?.type === 'required' && <span className="label-text-alt text-red-500 ">{errors.email.message}</span>}
                                 {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500 ">{errors.email.message}</span>}
                             </label>
                         </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
                             <input   {...register("password", {
                                 required: {
@@ -91,7 +91,7 @@ const Login = () => {
                                     value: 6,
                                     message: 'Must be 6 characters or longer'
                                 }
-                            })} type="password" placeholder="Enter Your Password" class="input input-bordered" />
+                            })} type="password" placeholder="Enter Your Password" className="input input-bordered" />
                             <label className="label">
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLenth' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
@@ -102,12 +102,12 @@ const Login = () => {
 
                         </div>
                         {signInError}
-                        <div class="form-control mt-6">
-                            <button class="btn btn-primary">Login</button>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Login</button>
                         </div>
-                        <div class="divider">OR</div>
+                        <div className="divider">OR</div>
                     </form>
-                    <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-primary w-full">Continue with google</button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-primary w-full">Continue with google</button>
                 </div>
             </div>
         </div>
