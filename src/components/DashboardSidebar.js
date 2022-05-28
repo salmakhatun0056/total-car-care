@@ -6,8 +6,8 @@ import auth from '../firebase.init';
 const DashboardSidebar = ({ children }) => {
     const [user] = useAuthState(auth)
     return (
-        <>
-            <div className="drawer bg-accent  drawer-mobile ">
+        <div className='mb-2'>
+            <div className="drawer bg-accent  drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
                     {/* <!-- Page content here --> */}
@@ -31,7 +31,7 @@ const DashboardSidebar = ({ children }) => {
 
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

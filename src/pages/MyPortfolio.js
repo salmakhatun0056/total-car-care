@@ -2,9 +2,9 @@ import React from 'react';
 
 const MyPortfolio = () => {
     return (
-        <div>
+        <div className='mb-6'>
             <div className='p-12'>
-                <h1 className='text-3xl font-bold'>SALMA KHATUN</h1>
+                <h1 className='text-3xl font-bold text-primary'>SALMA KHATUN</h1>
                 <h2>Address:Mukundoganti,p/o# Shernogar,(6740), Belkuchi,Sirajganj</h2>
                 <p>Mobile Number: 01822830155</p>
                 <p>Email Address: ummesalma0056@gmail.com</p>
@@ -13,7 +13,7 @@ const MyPortfolio = () => {
 
 
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-12">
-                <h2 className='text-xl font-bold my-3'>Academic Qualification</h2>
+                <h2 className='text-xl font-bold my-3 text-primary'>Academic Qualification</h2>
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -105,7 +105,7 @@ const MyPortfolio = () => {
             </div>
 
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-12">
-                <h2 className='text-xl font-bold my-3'>Training and Course Summery</h2>
+                <h2 className='text-xl font-bold my-3 text-primary'>Training and Course Summery</h2>
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -172,6 +172,25 @@ const MyPortfolio = () => {
                                 6 months
                             </td>
 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-center text-primary  text-xl">
+                                My own projects Link here
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody className=''>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr> <span className='font-bold text-primary'>1.</span><a href="https://elegant-klepon-dbfbaa.netlify.app/?fbclid=IwAR1q2xO6AjTbaCdD82ns4h9NR4fRYcKIEKRwsN1cjJ-EzqfwTdUxV9-YC2k">https://elegant-klepon-dbfbaa.netlify.app/?fbclid=IwAR1q2xO6AjTbaCdD82ns4h9NR4fRYcKIEKRwsN1cjJ-EzqfwTdUxV9-YC2k</a></tr>
+                            <tr> <span className='font-bold text-primary'>2.</span><a href="https://assignment-10-bdab6.web.app/home?fbclid=IwAR3ORz41eKA9TAGOpV2XiH2gQKm4k2iRUVVPPJs-bO09PQijLWx2Dx_PMio">https://assignment-10-bdab6.web.app/home?fbclid=IwAR3ORz41eKA9TAGOpV2XiH2gQKm4k2iRUVVPPJs-bO09PQijLWx2Dx_PMio</a></tr>
+                            <tr> <span className='font-bold text-primary'>3.</span><a href="https://assignment-11-9c99d.web.app/">https://assignment-11-9c99d.web.app/</a></tr>
                         </tr>
                     </tbody>
                 </table>

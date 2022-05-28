@@ -3,11 +3,7 @@ import fetcher from '../api';
 import banner1 from '../assests/images/banner-car1.png'
 import banner2 from '../assests/images/banner-car2.png'
 import banner3 from '../assests/images/banner-car3.jpg'
-
-
 import Tool from './Tool';
-
-
 
 const Landing = () => {
     const [tools, setTools] = useState([])
