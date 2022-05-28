@@ -54,7 +54,7 @@ const Login = () => {
         }
     }
     return (
-        <div className="bg--base-100 w-full h-screen justify-center items-center flex">
+        <div className="bg--base-100 w-full mb-6 justify-center items-center flex">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body">
                     <h2 className='text-3xl text-center font-bold text-primary'>Login</h2>
@@ -96,7 +96,7 @@ const Login = () => {
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLenth' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                             </label>
-                            <small>Forget Password? <button className='px-2 text-sm btn-link text-primary' onClick={resetPassword}>Reset Password</button> </small>
+                            {/* <small>Forget Password? <button className='px-2 text-sm btn-link text-primary' onClick={resetPassword}>Reset Password</button> </small> */}
 
                             <small className='mt-2 '> New to car parts shop? <Link to='/register' className='text-info pe-auto text-decoration-none'>Please Register </Link></small>
 

@@ -39,8 +39,7 @@ const MakeAdmin = () => {
                     <tr>
                         <th></th>
                         <th>Email</th>
-                        <th>Job</th>
-                        <th>Job</th>
+                        <th>Make Admin</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,19 +52,10 @@ const MakeAdmin = () => {
                                 <td>{
                                     !user.role && <button onClick={() => handleAdmin(user.email)} className='btn btn-primary'>Make Admin</button>
                                 }</td>
-                                <td><button className='btn btn-primary'>Delete</button></td>
 
                             </tr>
                         )
                     }
-                    {/* <!-- row 1 --> */}
-                    {/* {users.map((user, index) => <tr>
-
-                        <th>{index + 1}</th>
-                        <td>{user.email}</td>
-                        <td>Quality Control Specialist</td>
-
-                    </tr>)} */}
                 </tbody>
             </table>
         </div>

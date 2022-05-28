@@ -6,19 +6,19 @@ const Blog = () => {
             <h2 className='text-center text-primary text-2xl font-bold '>BLOGS</h2>
             <div>
 
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
+                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-center text-primary  text-xl">
+                                <th scope="col" className="px-6 py-3 text-center text-primary  text-xl">
                                     How will you improve the performance of a React Application?
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
-                                <td class="px-6 py-4 p-6">
+                                <td className="px-6 py-4 p-6">
                                     Internally, React uses several clever techniques to minimize the number of costly DOM operations required to update the UI.To optimize React rendering, you need to make sure that components receive only necessary props. It will let you control the CPU consumption and avoid over-rendering unnecessary features. The solution is to create a functional component that will collect all props and redistribute them to other components
                                 </td>
                             </tr>
@@ -26,19 +26,19 @@ const Blog = () => {
                     </table>
                 </div>
 
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
+                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-center text-primary  text-xl">
+                                <th scope="col" className="px-6 py-3 text-center text-primary  text-xl">
                                     What are the different ways to manage a state in a React application?
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
-                                <td class="px-6 py-4 p-6">
+                                <td className="px-6 py-4 p-6">
                                     Developers of enterprise-level React applications know how crucial state management is to a coherent end-user experience.
                                     Not only are there are a lot of different kinds of state, but there often dozens of ways of managing each kind.
                                     There are four main types of state we need to properly manage in our React app:
@@ -52,19 +52,19 @@ const Blog = () => {
                     </table>
                 </div>
 
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
+                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-center text-primary  text-xl">
+                                <th scope="col" className="px-6 py-3 text-center text-primary  text-xl">
                                     How does prototypical inheritance work?
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
-                                <td class="px-6 py-4 p-6">
+                                <td className="px-6 py-4 p-6">
                                     The Prototypal Inheritance is a method by which an object can inherit the properties and methods of another object.Generally To get and set an prototype of an object, we use the object.The object from where the properties are inherited is named prototype.
                                 </td>
                             </tr>
@@ -72,21 +72,49 @@ const Blog = () => {
                     </table>
                 </div>
 
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
+                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-center text-primary  text-xl">
+                                <th scope="col" className="px-6 py-3 text-center text-primary  text-xl">
                                     What is a unit test? Why should write unit tests?
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
-                                <td class="px-6 py-4 p-6">
+                                <td className="px-6 py-4 p-6">
                                     Unit testing is a software development process in which the smallest testable parts of an application, called units.Unit tests are performed for proper management and sorting individually.One of the benefits of unit tests is that they isolate a function, class or method and only test that piece of code. Higher quality individual components create overall system resiliency. Thus, the result is reliable code. Unit tests also change the nature of the debugging process.
                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3 mx-auto mt-6">
+                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" className="px-6 py-3 text-center text-primary  text-xl">
+                                    Search a product in array by name:
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <code >
+                                    {
+                                        `let arr = [
+                                            { name:"string 1", value:"this", other: "that" },
+                                            { name:"string 2", value:"this", other: "that" }
+                                        ];
+                                        
+                                        let obj = arr.find(o => o.name === 'string 1');
+                                        
+                                        console.log(obj);`
+                                    }
+                                </code>
                             </tr>
                         </tbody>
                     </table>

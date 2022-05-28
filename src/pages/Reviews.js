@@ -8,24 +8,22 @@ const Reviews = () => {
         return <Loading></Loading>
     }
     return (
-        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 my-12'>
-            {
-                reviews.data.map((review, index) => <div key={index} className='card w-96 bg-primary shadow-xl'>
-                    <div className='p-6'>
-                        <p className='text-white'>{review.description}</p>
-                        <h2 className='card-tittle text-warning'>{review.rating} Star</h2>
-                        <div className='card-actions justify-end text-white'>
-                            <p>1 day ago</p>
-                        </div>
-                    </div>
-                </div>)
-            }
-            {/* <h2 className='text-primary text-center text-2xl font-bold my-12'>All Reviews {reviews.length}</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-5  lg:gap-x-5 lg:px-12 mb-6'>
+        <div>
+            <h2 className='text-primary text-2xl font-bold text-center'>Our Customers Reviews</h2>
+            <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3  lg:px-12 my-12'>
                 {
-                    reviews.map(review => <Review key={review._id} review={review}></Review>)
+                    reviews.data.map((review, index) => <div key={index} className='card w-96 bg-primary shadow-xl'>
+                        <div className='p-6'>
+                            <h3 className='text-xl font-bold text-white'>{review.name}</h3>
+                            <p className='text-white'>{review.description}</p>
+                            <h2 className='card-tittle text-warning text-xl font-bold'>{review.rating} Star</h2>
+                            <div className='card-actions justify-end text-white'>
+                                <p>4 days ago</p>
+                            </div>
+                        </div>
+                    </div>)
                 }
-            </div> */}
+            </div>
         </div>
     );
 };

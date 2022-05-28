@@ -2,9 +2,9 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import DashboardSidebar from '../../components/DashboardSidebar';
 
-const Dashboard = () => {
+const Dashboard = ({ userData }) => {
     return (
-        <DashboardSidebar>
+        <DashboardSidebar userData={userData}>
             <Outlet></Outlet>
         </DashboardSidebar>
     );
