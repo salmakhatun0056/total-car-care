@@ -56,7 +56,7 @@ function App() {
           </RequireAuth>}>
 
             <Route path='/dashboard/' element={<MyOrders user={user} />}></Route>
-            <Route path='/dashboard/add-review' element={<AddReview />}></Route>
+            <Route path='/dashboard/add-review' element={<AddReview user={user} />}></Route>
             <Route path='/dashboard/my-profile' element={<MyProfile />}></Route>
 
             <Route path='/dashboard/manage-all-orders' element={<RequireAdmin><ManageAllOrders /></RequireAdmin>}></Route>

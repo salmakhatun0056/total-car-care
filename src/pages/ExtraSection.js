@@ -33,7 +33,7 @@ const ExtraSection = () => {
                     <button className='btn btn-warning text-white'>View Ebooks ❯</button>
                 </div>
             </div>
-            <div className='text-center mb-6'>
+            <div className='text-center mb-6 text-primary'>
                 <a href='/'>View full resource Library</a>
             </div>
         </div>

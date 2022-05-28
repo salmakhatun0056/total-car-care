@@ -1,14 +1,39 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import fetcher from '../../api';
+import { toast } from 'react-toastify';
+// import fetcher from '../../api';
 
-const AddReview = () => {
+const AddReview = ({ user }) => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = async (data) => {
+        console.log(data)
+        const reviews = {
+            rating: data.rating,
+            description: data.description,
+            name: user.displayName
 
-        const res = await fetcher.post("/add-review", data);
-        console.log(res);
-        reset()
+        }
+        console.log(reviews)
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(reviews)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                if (result.acknowledged) {
+                    toast('Your Review added')
+                    reset()
+                }
+            })
+        // const res = await fetcher.post("/add-review", data);
+        // console.log(res);
+        // 
+        //
 
 
 
@@ -27,7 +52,7 @@ const AddReview = () => {
                                 <span className="label-text">Tools Rating</span>
                             </label>
                             {/* <input  type="number"   /> */}
-                            <input {...register("ratings")} placeholder="Tools ratings" className="input input-bordered" type="number" id="quantity" name="quantity" min="1" max="5" required />
+                            <input {...register("rating")} placeholder="Tools ratings" className="input input-bordered" type="number" id="rating" name="rating" min="1" max="5" required />
                         </div>
 
                         <div className="form-control">
@@ -45,7 +70,7 @@ const AddReview = () => {
 
 
                         <div className="form-control mt-6">
-                            <button type='submit' className="btn btn-primary">ADD SERVICE</button>
+                            <button type='submit' className="btn btn-primary">ADD REVIEW</button>
 
                         </div>
                     </form>
