@@ -1,10 +1,11 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
 
 const MyOrders = ({ user }) => {
     console.log(user)
-    const myOrders = useQuery('myOrder', () => fetch(`http://localhost:5000/orders/${user.email}`, {
+    const myOrders = useQuery('myOrder', () => fetch(`https://ancient-caverns-35503.herokuapp.com/orders/${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,7 +17,7 @@ const MyOrders = ({ user }) => {
         return <Loading></Loading>
     }
     const handleDelete = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://ancient-caverns-35503.herokuapp.com/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +40,7 @@ const MyOrders = ({ user }) => {
                         <th>Price</th>
                         <th>Order Qty</th>
                         <th>Total Price</th>
-                        <th>Action</th>
+                        <th>Payment</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -53,12 +54,19 @@ const MyOrders = ({ user }) => {
                                 <td>${order.price}</td>
                                 <td>${order.orderQty}</td>
                                 <td>${order.orderQty * order.price}</td>
+
                                 <td>
+                                    {!order.paid && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-primary'>Pay</button></Link>}
+                                    {order.paid && <span className='text-primary'>Paid</span>}
+                                </td>
+
+                                {/* <td>
                                     {
-                                        !order.paid ? <button className='btn btn-primary'>Proceed to pay</button>
+                                        !order.paid ? <Link to='/' className='btn btn-primary'>Proceed to pay</Link>
                                             : order.paid
                                     }
-                                </td>
+
+                                </td> */}
                                 <td><button onClick={() => handleDelete(order._id)} className='btn btn-primary'>Cancel</button></td>
 
                             </tr>

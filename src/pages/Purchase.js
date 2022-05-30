@@ -12,7 +12,7 @@ const Purchase = ({ user }) => {
     const [success, setSuccess] = useState(false)
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const tool = useQuery('tool', () => fetch(`http://localhost:5000/get-tool/${id}`)
+    const tool = useQuery('tool', () => fetch(`https://ancient-caverns-35503.herokuapp.com/get-tool/${id}`)
         .then(res => res.json()))
 
     if (tool.isLoading) {
@@ -32,7 +32,7 @@ const Purchase = ({ user }) => {
             phoneNumber: data.phone
         }
         console.log(order)
-        fetch('http://localhost:5000/orders', {
+        fetch('https://ancient-caverns-35503.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json',

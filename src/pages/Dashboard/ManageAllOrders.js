@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 const ManageAllOrders = () => {
     const { isLoading, error, data, refetch } = useQuery('allOrders', () =>
 
-        fetch('http://localhost:5000/all-orders', {
+        fetch('https://ancient-caverns-35503.herokuapp.com/all-orders', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

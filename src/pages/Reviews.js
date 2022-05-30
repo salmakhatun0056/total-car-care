@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../components/Loading';
 
 const Reviews = () => {
-    const reviews = useQuery('reviews', () => fetch('http://localhost:5000/get-review').then(res => res.json()))
+    const reviews = useQuery('reviews', () => fetch('https://ancient-caverns-35503.herokuapp.com/get-review').then(res => res.json()))
     if (reviews.isLoading) {
         return <Loading></Loading>
     }

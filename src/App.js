@@ -30,6 +30,7 @@ import MyPortfolio from './pages/MyPortfolio';
 import { useQuery } from 'react-query';
 import NotAdmin from './authentication/NotAdmin';
 import EditProfile from './pages/Dashboard/EditProfile';
+import Payment from './pages/Dashboard/Payment';
 
 
 
@@ -42,7 +43,7 @@ function App() {
   const [user, loading, error] = useAuthState(auth);
   const isTrue = !!user;
 
-  const userData = useQuery(['users', user?.email], () => fetch(`http://localhost:5000/users/${user?.email}`)
+  const userData = useQuery(['users', user?.email], () => fetch(`https://ancient-caverns-35503.herokuapp.com/users/${user?.email}`)
     .then(res => res.json())
     , { enabled: isTrue }
   )
@@ -66,7 +67,10 @@ function App() {
             }
 
             <Route path='/dashboard/add-review' element={<NotAdmin userData={userData}><AddReview user={user} /></NotAdmin>}></Route>
-            <Route path='/dashboard/my-profile' element={<MyProfile user={user} />}></Route>
+
+            <Route path='/dashboard/payment/:id' element={<NotAdmin userData={userData}><Payment user={user} /></NotAdmin>}></Route>
+
+            <Route path='/dashboard/my-profile' element={<MyProfile user={user} userData={userData} />}></Route>
 
             <Route path='/dashboard' element={<RequireAdmin userData={userData}><ManageAllOrders /></RequireAdmin>}></Route>
             <Route path='/dashboard/add-a-product' element={

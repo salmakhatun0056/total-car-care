@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
@@ -9,7 +9,7 @@ import useToken from '../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset, getValues } = useForm();
     let location = useLocation();
     let from = location.state?.from?.pathname || '/'
     const [
@@ -19,9 +19,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const [token] = useToken(gUser || user)
-    const [sendPasswordResetEmail, sending, rError] = useSendPasswordResetEmail(
-        auth
-    );
+    const [sendPasswordResetEmail, sending, rError] = useSendPasswordResetEmail(auth);
     const navigate = useNavigate()
     let signInError;
     useEffect(() => {
@@ -39,20 +37,8 @@ const Login = () => {
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
         reset()
-        console.log(data)
     };
 
-    const resetPassword = async (data) => {
-        console.log(data)
-        await sendPasswordResetEmail(data.email);
-        if (data.email) {
-            await sendPasswordResetEmail(data.email);
-            alert('Sent email');
-        }
-        else {
-            alert('please enter your email address');
-        }
-    }
     return (
         <div className="bg--base-100 w-full mb-6 justify-center items-center flex">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -96,7 +82,11 @@ const Login = () => {
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLenth' && <span className="label-text-alt text-red-500 ">{errors.password.message}</span>}
                             </label>
-                            {/* <small>Forget Password? <button className='px-2 text-sm btn-link text-primary' onClick={resetPassword}>Reset Password</button> </small> */}
+                            <button type='button' onClick={async () => {
+                                const values = getValues('email');
+                                await sendPasswordResetEmail(values);
+                                alert('Sent email');
+                            }} className="text-primary  link-hover">Forgot password?</button>
 
                             <small className='mt-2 '> New to car parts shop? <Link to='/register' className='text-info pe-auto text-decoration-none'>Please Register </Link></small>
 
