@@ -8,7 +8,7 @@ const DashboardSidebar = ({ children, userData }) => {
     if (userData?.isLoading) {
         <Loading></Loading>
     }
-    console.log(userData)
+    // console.log(userData)
     return (
         <div className='mb-2'>
             <div className="drawer bg-accent  drawer-mobile">

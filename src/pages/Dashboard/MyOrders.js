@@ -51,22 +51,20 @@ const MyOrders = ({ user }) => {
                             <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{order.toolName}</td>
-                                <td>${order.price}</td>
-                                <td>${order.orderQty}</td>
-                                <td>${order.orderQty * order.price}</td>
+                                <td>{order.price}$</td>
+                                <td>{order.orderQty} pices </td>
+                                <td>{order.orderQty * order.price}$</td>
 
                                 <td>
                                     {!order.paid && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-primary'>Pay</button></Link>}
-                                    {order.paid && <span className='text-primary'>Paid</span>}
+                                    {order.paid && <div>
+                                        <p><span className='text-primary'>Paid</span></p>
+                                        <p>Transaction id: <span className='text-primary font-bold'>{order.transactionId
+                                        }</span> </p>
+                                    </div>}
                                 </td>
 
-                                {/* <td>
-                                    {
-                                        !order.paid ? <Link to='/' className='btn btn-primary'>Proceed to pay</Link>
-                                            : order.paid
-                                    }
 
-                                </td> */}
                                 <td><button onClick={() => handleDelete(order._id)} className='btn btn-primary'>Cancel</button></td>
 
                             </tr>
