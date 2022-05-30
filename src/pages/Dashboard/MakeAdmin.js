@@ -21,6 +21,7 @@ const MakeAdmin = () => {
     const handleAdmin = email => {
         fetch(`https://ancient-caverns-35503.herokuapp.com/users/${email}`, {
             method: 'PATCH'
+
         })
             .then(res => res.json())
             .then(result => {
@@ -29,6 +30,21 @@ const MakeAdmin = () => {
                 console.log(result)
             })
     }
+    const handleDelete = email => {
+        fetch(`http://localhost:5000/users/${email}`, {
+            method: "DELETE",
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.acknowledged) {
+                    refetch();
+                }
+            })
+    }
+    console.log(data)
 
 
     return (
@@ -52,6 +68,7 @@ const MakeAdmin = () => {
                                 <td>{
                                     !user.role && <button onClick={() => handleAdmin(user.email)} className='btn btn-primary'>Make Admin</button>
                                 }</td>
+                                <td><button onClick={() => handleDelete(user.email)} className='btn btn-primary'>Delete</button></td>
 
                             </tr>
                         )
