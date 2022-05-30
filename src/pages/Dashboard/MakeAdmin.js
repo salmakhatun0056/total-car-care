@@ -31,7 +31,7 @@ const MakeAdmin = () => {
             })
     }
     const handleDelete = email => {
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://ancient-caverns-35503.herokuapp.com/users/${email}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
