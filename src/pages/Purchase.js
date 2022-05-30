@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Loading from '../components/Loading';
 
-const Purchase = ({ user }) => {
+const Purchase = ({ user, userData }) => {
     const { id } = useParams()
     const [success, setSuccess] = useState(false)
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -115,7 +115,7 @@ const Purchase = ({ user }) => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Please Order Now</button>
+                            <button disabled={userData?.data?.role} className="btn btn-primary">{userData?.data?.role ? "You are an admin" : "Please order now"}</button>
                         </div>
                     </form>
                 </div>

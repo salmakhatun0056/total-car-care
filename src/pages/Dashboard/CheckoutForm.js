@@ -73,7 +73,8 @@ const CheckoutForm = ({ order }) => {
             //  STOR PAYMENT
             const payment = {
                 order: _id,
-                transactionId: paymentIntent.id
+                transactionId: paymentIntent.id,
+                paid: 'pending'
 
             }
             fetch(`http://localhost:5000/order/${_id}`, {

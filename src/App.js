@@ -57,7 +57,7 @@ function App() {
           <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
-          <Route path='/tool/:id' element={<RequireAuth><Purchase user={user} /></RequireAuth>}></Route>
+          <Route path='/tool/:id' element={<RequireAuth><Purchase user={user} userData={userData} /></RequireAuth>}></Route>
 
           <Route path='/dashboard' element={<RequireAuth userData={userData}>
             <Dashboard userData={userData}></Dashboard>

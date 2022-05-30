@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
 
 const MyOrders = ({ user }) => {
-    console.log(user)
+    // console.log(user)
     const myOrders = useQuery('myOrder', () => fetch(`https://ancient-caverns-35503.herokuapp.com/orders/${user.email}`, {
         method: 'GET',
         headers: {
@@ -12,7 +12,7 @@ const MyOrders = ({ user }) => {
         }
 
     }).then(res => res.json()))
-    console.log(myOrders)
+    // console.log(myOrders)
     if (myOrders.isLoading) {
         return <Loading></Loading>
     }
@@ -56,16 +56,17 @@ const MyOrders = ({ user }) => {
                                 <td>{order.orderQty * order.price}$</td>
 
                                 <td>
-                                    {!order.paid && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-primary'>Pay</button></Link>}
+                                    {!order.paid && <Link to={`/dashboard/payment/${order._id}`}><button className='btn  btn-primary'>Pay</button></Link>}
                                     {order.paid && <div>
-                                        <p><span className='text-primary'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-primary font-bold'>{order.transactionId
-                                        }</span> </p>
+                                        <p><span className='text-primary'>{order.paid}</span></p>
                                     </div>}
                                 </td>
 
 
-                                <td><button onClick={() => handleDelete(order._id)} className='btn btn-primary'>Cancel</button></td>
+                                <td>{!order.paid && <button onClick={() => handleDelete(order._id)} className='btn btn-primary'>Cancel</button>}
+                                    {order.paid && <p>Transaction id: <span className='text-primary font-bold'>{order.transactionId
+                                    }</span> </p>}
+                                </td>
 
                             </tr>
                         )
