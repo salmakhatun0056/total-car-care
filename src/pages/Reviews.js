@@ -12,7 +12,7 @@ const Reviews = () => {
             <h2 className='text-primary text-2xl font-bold text-center'>Our Customers Reviews</h2>
             <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3  lg:px-12 my-12'>
                 {
-                    reviews.data.map((review, index) => <div key={index} className='card w-96 bg-primary shadow-xl'>
+                    reviews.data.map((review, index) => <div key={index} className='card mx-auto w-96 bg-primary shadow-xl'>
                         <div className='p-6'>
                             <h3 className='text-xl font-bold text-white'>{review.name}</h3>
                             <p className='text-white'>{review.description}</p>

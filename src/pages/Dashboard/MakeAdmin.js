@@ -45,7 +45,7 @@ const MakeAdmin = () => {
                 <tbody>
 
                     {
-                        data.map((user, index) =>
+                        data?.map((user, index) =>
                             <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{user.email}</td>

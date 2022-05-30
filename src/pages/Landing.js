@@ -79,7 +79,7 @@ const Landing = () => {
             </div>
             <div>
                 <h2 className='text-3xl text-center mt-5 mb-5 font-bold text-primary'>Our Car Tools </h2>
-                <div className='grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 mb-5 lg:px-12  gap-x-6'>
+                <div className='grid w-[90%] mx-auto  justify-between items-center  md:grid-cols-2 grid-cols-1 lg:grid-cols-3 mb-5 px-auto  gap-x-auto'>
                     {
                         tools.slice(0 - 6).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
                     }
