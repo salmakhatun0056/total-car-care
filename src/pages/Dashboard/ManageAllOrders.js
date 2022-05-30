@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     )
     const handleShipping = id => {
         const shipping = { paid: 'shipped' }
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://ancient-caverns-35503.herokuapp.com/order/${id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json',

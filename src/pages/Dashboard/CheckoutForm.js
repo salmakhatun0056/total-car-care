@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
 
     const { _id, price, email, toolName, name, orderQty } = order;
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://ancient-caverns-35503.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -77,7 +77,7 @@ const CheckoutForm = ({ order }) => {
                 paid: 'pending'
 
             }
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://ancient-caverns-35503.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-type': 'application/json',
