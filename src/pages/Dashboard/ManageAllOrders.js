@@ -29,7 +29,6 @@ const ManageAllOrders = () => {
                 refetch();
             })
     }
-    console.log(data)
     return (
         <div className="overflow-x-auto mt-6 w-full h-screen">
             <table className="table w-full px-6">

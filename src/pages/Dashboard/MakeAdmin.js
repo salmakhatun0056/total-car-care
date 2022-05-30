@@ -56,6 +56,7 @@ const MakeAdmin = () => {
                         <th></th>
                         <th>Email</th>
                         <th>Make Admin</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
