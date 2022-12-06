@@ -35,7 +35,7 @@ const Register = () => {
         reset()
 
         const newUser = { name: data.name, email: data.email }
-        fetch('https://ancient-caverns-35503.herokuapp.com/users', {
+        fetch('https://totalcar-care.up.railway.app/users', {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

@@ -5,7 +5,7 @@ import fetcher from '../../api';
 const ManageProducts = () => {
     const { isLoading, error, data, refetch } = useQuery('tools', () =>
 
-        fetch('https://ancient-caverns-35503.herokuapp.com/get-tool', {
+        fetch('https://totalcar-care.up.railway.app/get-tool', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -18,7 +18,7 @@ const ManageProducts = () => {
 
 
     const handleDelete = id => {
-        fetch(`https://ancient-caverns-35503.herokuapp.com/delete-tool/${id}`, {
+        fetch(`https://totalcar-care.up.railway.app/delete-tool/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

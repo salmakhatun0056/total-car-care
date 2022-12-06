@@ -1,6 +1,6 @@
 import axios from "axios";
 
 const fetcher = axios.create({
-    baseURL: 'https://ancient-caverns-35503.herokuapp.com/'
+    baseURL: 'https://totalcar-care.up.railway.app/'
 });
 export default fetcher

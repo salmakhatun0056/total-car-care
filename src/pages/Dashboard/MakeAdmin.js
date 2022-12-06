@@ -5,7 +5,7 @@ import Loading from '../../components/Loading';
 const MakeAdmin = () => {
 
     const { isLoading, error, data, refetch } = useQuery('users', () =>
-        fetch('https://ancient-caverns-35503.herokuapp.com/users', {
+        fetch('https://totalcar-care.up.railway.app/users', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -19,7 +19,7 @@ const MakeAdmin = () => {
     }
 
     const handleAdmin = email => {
-        fetch(`https://ancient-caverns-35503.herokuapp.com/users/${email}`, {
+        fetch(`https://totalcar-care.up.railway.app/users/${email}`, {
             method: 'PATCH'
 
         })
@@ -31,7 +31,7 @@ const MakeAdmin = () => {
             })
     }
     const handleDelete = email => {
-        fetch(`https://ancient-caverns-35503.herokuapp.com/users/${email}`, {
+        fetch(`https://totalcar-care.up.railway.app/users/${email}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

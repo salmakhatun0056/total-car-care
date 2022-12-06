@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
 
     const { _id, price, email, toolName, name, orderQty } = order;
     useEffect(() => {
-        fetch('https://ancient-caverns-35503.herokuapp.com/create-payment-intent', {
+        fetch('https://totalcar-care.up.railway.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -77,7 +77,7 @@ const CheckoutForm = ({ order }) => {
                 paid: 'pending'
 
             }
-            fetch(`https://ancient-caverns-35503.herokuapp.com/order/${_id}`, {
+            fetch(`https://totalcar-care.up.railway.app/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-type': 'application/json',

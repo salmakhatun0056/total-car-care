@@ -14,7 +14,7 @@ const AddReview = ({ user }) => {
 
         }
         console.log(reviews)
-        fetch('https://ancient-caverns-35503.herokuapp.com/reviews', {
+        fetch('https://totalcar-care.up.railway.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

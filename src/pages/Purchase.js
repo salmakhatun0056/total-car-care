@@ -12,7 +12,7 @@ const Purchase = ({ user, userData }) => {
     const [success, setSuccess] = useState(false)
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const tool = useQuery('tool', () => fetch(`https://ancient-caverns-35503.herokuapp.com/get-tool/${id}`)
+    const tool = useQuery('tool', () => fetch(`https://totalcar-care.up.railway.app/get-tool/${id}`)
         .then(res => res.json()))
 
     if (tool.isLoading) {
@@ -32,7 +32,7 @@ const Purchase = ({ user, userData }) => {
             phoneNumber: data.phone
         }
         console.log(order)
-        fetch('https://ancient-caverns-35503.herokuapp.com/orders', {
+        fetch('https://totalcar-care.up.railway.app/orders', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json',

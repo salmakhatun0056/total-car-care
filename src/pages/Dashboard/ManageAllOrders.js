@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 const ManageAllOrders = () => {
     const { isLoading, error, data, refetch } = useQuery('allOrders', () =>
 
-        fetch('https://ancient-caverns-35503.herokuapp.com/all-orders', {
+        fetch('https://totalcar-care.up.railway.app/all-orders', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     )
     const handleShipping = id => {
         const shipping = { paid: 'shipped' }
-        fetch(`https://ancient-caverns-35503.herokuapp.com/order/${id}`, {
+        fetch(`https://totalcar-care.up.railway.app/order/${id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json',

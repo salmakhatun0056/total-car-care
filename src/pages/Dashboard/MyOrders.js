@@ -5,7 +5,7 @@ import Loading from '../../components/Loading';
 
 const MyOrders = ({ user }) => {
     // console.log(user)
-    const myOrders = useQuery('myOrder', () => fetch(`https://ancient-caverns-35503.herokuapp.com/orders/${user.email}`, {
+    const myOrders = useQuery('myOrder', () => fetch(`https://totalcar-care.up.railway.app/orders/${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,7 +17,7 @@ const MyOrders = ({ user }) => {
         return <Loading></Loading>
     }
     const handleDelete = id => {
-        fetch(`https://ancient-caverns-35503.herokuapp.com/orders/${id}`, {
+        fetch(`https://totalcar-care.up.railway.app/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -43,7 +43,7 @@ function App() {
   const [user, loading, error] = useAuthState(auth);
   const isTrue = !!user;
 
-  const userData = useQuery(['users', user?.email], () => fetch(`https://ancient-caverns-35503.herokuapp.com/users/${user?.email}`)
+  const userData = useQuery(['users', user?.email], () => fetch(`https://totalcar-care.up.railway.app/users/${user?.email}`)
     .then(res => res.json())
     , { enabled: isTrue }
   )
